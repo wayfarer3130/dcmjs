@@ -1,9 +1,9 @@
 {
-  "name": "dcmjs",
-  "version": "0.24.0",
-  "description": "Javascript implementation of DICOM manipulation",
-  "main": "build/dcmjs.js",
-  "module": "build/dcmjs.es.js",
+  "name": "@cornerstonejs/adapters",
+  "version": "0.0.1",
+  "description": "Adapters for DICOM and other formats for cornerstone",
+  "main": "build/cornerstone-adapters.js",
+  "module": "build/cornerstone-adapters.es.js",
   "directories": {
     "example": "examples"
   },
@@ -17,14 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dcmjs-org/dcmjs.git"
+    "url": "git+ https://github.com/cornerstonejs/cornerstone3D-beta.git"
   },
   "author": "Steve Pieper",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dcmjs-org/dcmjs/issues"
   },
-  "homepage": "https://github.com/dcmjs-org/dcmjs#readme",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
@@ -50,7 +49,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.17.8",
-    "gl-matrix": "^3.1.0",
+    "dcmjs": "^0.24.0",
     "lodash.clonedeep": "^4.5.0",
     "loglevelnext": "^3.0.1",
     "ndarray": "^1.0.19",

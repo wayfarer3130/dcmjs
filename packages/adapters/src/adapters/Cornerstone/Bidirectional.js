@@ -1,7 +1,9 @@
+import { utilities } from "dcmjs";
 import MeasurementReport from "./MeasurementReport";
-import TID300Bidirectional from "../../utilities/TID300/Bidirectional";
 import CORNERSTONE_4_TAG from "./cornerstone4Tag";
 import { toArray } from "../helpers.js";
+
+const { TID300Bidirectional } = utilities.TID300;
 
 const BIDIRECTIONAL = "Bidirectional";
 const LONG_AXIS = "Long Axis";
@@ -41,10 +43,8 @@ class Bidirectional {
         ).find(group => group.ValueType === "SCOORD");
 
         const { ReferencedSOPSequence } = longAxisSCOORDGroup.ContentSequence;
-        const {
-            ReferencedSOPInstanceUID,
-            ReferencedFrameNumber
-        } = ReferencedSOPSequence;
+        const { ReferencedSOPInstanceUID, ReferencedFrameNumber } =
+            ReferencedSOPSequence;
 
         // Long axis
 
@@ -142,18 +142,10 @@ class Bidirectional {
     }
 
     static getTID300RepresentationArguments(tool) {
-        const {
-            start,
-            end,
-            perpendicularStart,
-            perpendicularEnd
-        } = tool.handles;
-        const {
-            shortestDiameter,
-            longestDiameter,
-            finding,
-            findingSites
-        } = tool;
+        const { start, end, perpendicularStart, perpendicularEnd } =
+            tool.handles;
+        const { shortestDiameter, longestDiameter, finding, findingSites } =
+            tool;
 
         const trackingIdentifierTextValue =
             "cornerstoneTools@^4.0.0:Bidirectional";

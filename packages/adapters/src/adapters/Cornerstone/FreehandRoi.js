@@ -1,16 +1,16 @@
+import { utilities } from "dcmjs";
+
 import MeasurementReport from "./MeasurementReport";
-import TID300Polyline from "../../utilities/TID300/Polyline";
 import CORNERSTONE_4_TAG from "./cornerstone4Tag";
+
+const { TID300Polyline } = utilities.TID300;
 
 class FreehandRoi {
     constructor() {}
 
     static getMeasurementData(MeasurementGroup) {
-        const {
-            defaultState,
-            SCOORDGroup,
-            NUMGroup
-        } = MeasurementReport.getSetupMeasurementData(MeasurementGroup);
+        const { defaultState, SCOORDGroup, NUMGroup } =
+            MeasurementReport.getSetupMeasurementData(MeasurementGroup);
 
         const state = {
             ...defaultState,
